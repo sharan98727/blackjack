@@ -1,0 +1,167 @@
+<html>
+<title>blackjack</title>
+<head>
+<link rel="stylesheet" href="black.css">
+</head>
+<body>
+    <div class="game">
+
+          <h3>Blackjack</h3> 
+  <div id = game-options>
+    <div class="game-optionsA">
+    
+            <button class='btnA' id="playonA" onclick = playonA()>playonA</button>
+            <button class='btnA' onclick= holdA()> holdA </button>
+            <button class='btnA' onclick= startA()> startA </button>
+
+        </div>
+   
+    <div class="game-optionsB">
+    
+      <button class='btnB' id="playonB" onclick = playonB()>playonB</button>
+      <button class='btnB' onclick= holdB()> holdB </button>
+      <button class='btnB' onclick= startB()> startB </button>
+    </div>
+  </div>
+<div class="cards" >
+    <div id="cardsA" >
+      <div class="cardA" id="card1"></div>
+      <div class="cardA" id="card2"></div>
+    </div>
+   
+    <div id = "cardsB">
+    
+            <div class="cardB" id="card3"></div>
+            <div class="cardB" id="card4"></div>
+
+    </div>
+</div>
+    </div>
+    
+        
+</body>
+<script type = "text/javascript">
+let x = [];
+function startA() {
+  window.card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10];
+  let cardnumber1a = card[Math.floor(Math.random() * 12)];
+  document.getElementById("card1").innerText = cardnumber1a;
+  let cardnumber1b = card[Math.floor(Math.random() * 12)];
+  document.getElementById("card2").innerText = cardnumber1b;
+  window.sumA = cardnumber1a + cardnumber1b;
+  window.playerA = [];
+  playerA.push(cardnumber1a);
+  playerA.push(cardnumber1b);
+  if (sumA == 17 || sumA == 18 || sumA == 19 || sumA == 20) {
+    alert("your score is" + sumA + "you can hold");
+  }
+}
+
+function playonA() {
+  cardnumberA = card[Math.floor(Math.random() * 12)];
+  var div = document.createElement("div");
+  div.textContent = cardnumberA;
+  div.classList.add('cardA');
+  document.body.appendChild(div);
+  console.log(cardnumberA);
+  playerA.push(cardnumberA);
+  sumA = sumA + cardnumberA;
+  if (sumA == 21) {
+
+    alert("you are winner");
+
+  }
+
+  if (sumA == 17 || sumA == 18 || sumA == 19 || sumA == 20) {
+    alert("your score is" + sumA + "you can hold");
+    window.resultA = sumA;
+  }
+  
+  if (sumA > 21) {
+    alert("you lose");
+    x.push(0);
+  }
+}
+
+function holdA() {
+  if (playerA.length == 2) {
+    x.push(sumA);
+  }
+  if (playerA.length > 2) {
+
+    x.push(resultA);
+  }
+  
+  }
+
+
+function startB() {
+  window.card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10];
+  let cardnumber2a = card[Math.floor(Math.random() * 12)];
+  document.getElementById("card3").innerText = cardnumber2a;
+  let cardnumber2b = card[Math.floor(Math.random() * 12)];
+  document.getElementById("card4").innerText = cardnumber2b;
+  window.sumB = cardnumber2a + cardnumber2b;
+  window.playerB = [];
+  playerB.push(cardnumber2a);
+  playerB.push(cardnumber2b);
+  if (sumB == 17 || sumB == 18 || sumB == 19 || sumB == 20) {
+    alert("your score is" + sumB + "you can hold");
+  }
+}
+
+function playonB() {
+  cardnumberB = card[Math.floor(Math.random() * 12)];
+  var div = document.createElement("div");
+  div.textContent = cardnumberB;
+  div.classList.add('cardB');
+  document.body.appendChild(div);
+  console.log(cardnumberB);
+  playerA.push(cardnumberB);
+  sumB = sumB + cardnumberB;
+  if (sumB == 21) {
+    alert("you are winner");
+  }
+  if (sumB == 17 || sumB == 18 || sumB == 19 || sumB == 20) {
+    alert("your score is" + sumB + "you can hold");
+    window.resultB = sumB;
+  }
+  if (sumB > 21) {
+    alert("you lose");
+    x.push(0);
+    holdB();
+  }
+}
+
+function holdB() {
+  if (playerB.length == 2) {
+    x.push(sumB);
+  }
+  if (playerB.length > 2) {
+    x.push(resultB);
+  }
+
+if(x.length == 2)
+{
+   if(x[0]==0 && x[1]==0)
+   {
+     alert("game draw");
+   }
+   if(x[0]>x[1])
+   {
+     alert("playerA win")
+   }
+   if(x[0]<x[1])
+   {
+     alert("playerB win")
+   }
+   if(resultA==resultB)
+   {
+     alert("playerA win")
+   }
+}
+}
+
+</script>
+
+</html>
