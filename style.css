@@ -1,0 +1,61 @@
+.game 
+{
+padding: 10px;
+color:black;
+text-align: center;
+display:block;
+}
+
+ .game-options   
+{
+
+text-align:center;
+padding: 20px;
+display: inline-flex;
+margin:auto;
+
+}
+
+.cards{
+    display: inline-flex;
+}
+
+.cardA
+{
+    display: inline-flex;
+    width: 50px;
+    height: 100px;
+    border-radius:  5px;
+    border-color: red;
+    background-color: white;
+    border:solid 3px;
+    margin-left: 60px;
+    margin-right: 200px;
+    margin-top: 50px;
+    text-align: center;
+    vertical-align:top;
+    font-size: x-large;
+    line-height: 20px;
+    font-display: center;
+
+
+}
+
+.cardB
+{
+    display: inline-flex;
+    width: 50px;
+    height: 100px;
+    border-radius:  5px;
+    border-color: red;
+    background-color: white;
+    border:solid 3px;
+    margin-left: 220px;
+    margin-right: 60px;
+    margin-top: 50px;
+    text-align: center;
+    vertical-align:top;
+    font-size: x-large;
+    line-height: 20px;
+    font-display: center;
+}
